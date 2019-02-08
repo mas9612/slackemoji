@@ -1,4 +1,4 @@
-# emojigen
+# slackemoji
 
 Generate Slack emoji.
 

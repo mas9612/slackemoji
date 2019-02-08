@@ -52,8 +52,6 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Printf("[DEBUG] text: %v\n", text)
-	fmt.Printf("[DEBUG] text: %v\n", []byte(text))
 	emoji, err := slackemoji.GenerateEmoji(text, options...)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "failed to generate emoji: %v", err)

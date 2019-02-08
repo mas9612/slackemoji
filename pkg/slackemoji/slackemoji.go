@@ -1,7 +1,6 @@
 package slackemoji
 
 import (
-	"fmt"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -85,8 +84,6 @@ func GenerateEmoji(text string, options ...EmojiOption) (Emoji, error) {
 	c := &http.Client{
 		Timeout: time.Second * 10,
 	}
-	fmt.Printf("[DEBUG] Text: %v\n", text)
-	fmt.Printf("[DEBUG] URL: %v\n", req.URL)
 	res, err := c.Do(req)
 	if err != nil {
 		return nil, errors.Wrap(err, "failed to get response from server")
