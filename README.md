@@ -3,7 +3,7 @@
 Generate Slack emoji.
 
 ```
-$ ./emojigen -h                                                                                                                                                                      (master)
+$ ./emojigen -h
 Usage of ./emojigen:
   -color string
         Font color code omitted precede # character. Default: EC71A1FF
@@ -14,5 +14,5 @@ Usage of ./emojigen:
   -public
         Whether new emoji will be make public. Default: false.
   -text string
-        Emoji text. Required.
+        Emoji text. Required. If you want to generate with multiline text, separate each line with comma character (,).
 ```

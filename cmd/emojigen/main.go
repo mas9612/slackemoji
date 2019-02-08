@@ -22,7 +22,7 @@ func main() {
 	flag.StringVar(&color, "color", "", "Font color code omitted precede # character. Default: EC71A1FF")
 	flag.StringVar(&font, "font", "", "Font family. Default: notosans-mono-bold. Valid family is one of [notosans-mono-bold, mplus-1p-black, rounded-x-mplus-1p-black, ipamjm, LinLibertine_RBah, aoyagireisyoshimo].")
 	flag.BoolVar(&public, "public", false, "Whether new emoji will be make public. Default: false.")
-	flag.StringVar(&text, "text", "", "Emoji text. Required.")
+	flag.StringVar(&text, "text", "", "Emoji text. Required. If you want to generate with multiline text, separate each line with comma character (,).")
 	flag.StringVar(&outfile, "out", "", "Output filename. Required.")
 	flag.Parse()
 
@@ -65,5 +65,4 @@ func main() {
 	}
 	defer file.Close()
 	binary.Write(file, binary.LittleEndian, emoji)
-	// fmt.Fprint(file, emoji)
 }

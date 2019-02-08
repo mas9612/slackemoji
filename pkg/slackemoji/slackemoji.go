@@ -5,6 +5,7 @@ import (
 	"net/http"
 	"net/url"
 	"strconv"
+	"strings"
 	"time"
 
 	"github.com/pkg/errors"
@@ -54,8 +55,9 @@ func buildParams(text string, c *EmojiConfig) url.Values {
 	values.Add("color", c.Color)
 	values.Add("font", c.Font)
 	values.Add("public_fg", strconv.FormatBool(c.Public))
-	// values.Add("text", url.QueryEscape(text))
-	values.Add("text", text)
+
+	lines := strings.Split(text, ",")
+	values.Add("text", strings.Join(lines, "\n"))
 	return values
 }
 
